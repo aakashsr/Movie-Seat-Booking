@@ -18,8 +18,18 @@ let ticketPrice = +movieSelect.value;
 //   });
 // });
 
+function updateCountAndPrice() {
+  const selectedSeats = document.querySelectorAll(".container .selected");
+  let selectedSeatsCount = selectedSeats.length;
+  count.textContent = selectedSeatsCount;
+  let ticketPrice = +movieSelect.value;
+  total.textContent = ticketPrice * selectedSeatsCount;
+}
+
 seatContainer.addEventListener("click", function(e) {
   e.target.classList.contains("occupied")
     ? none
     : e.target.classList.toggle("selected");
+
+  updateCountAndPrice();
 });

@@ -5,6 +5,7 @@
 }
 
 body {
+    font-family: 'Lato', sans-serif;
     background-color: #242333;
     color: #fff;
     display: flex;
@@ -12,4 +13,21 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.movie-container {
+    margin: 20px 0;
+}
+
+.movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Will remove the browser style and let you use your own style */
 }

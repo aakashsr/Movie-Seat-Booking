@@ -33,8 +33,20 @@ movieSelect.addEventListener("change", function(e) {
 
 seatContainer.addEventListener("click", function(e) {
   e.target.classList.contains("occupied")
-    ? none
+    ? null
     : e.target.classList.toggle("selected");
 
   updateCountAndPrice();
 });
+
+// Another Approach
+
+// seatContainer.addEventListener("click", function(e) {
+//   if (
+//     e.target.classList.contains("seat") &&
+//     !e.target.classList.contains("occupied")
+//   ) {
+//     e.target.classList.toggle("selected");
+//     updateCountAndPrice();
+//   }
+// });

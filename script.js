@@ -26,6 +26,11 @@ function updateCountAndPrice() {
   total.textContent = ticketPrice * selectedSeatsCount;
 }
 
+movieSelect.addEventListener("change", function(e) {
+  ticketPrice = +movieSelect.value;
+  updateCountAndPrice();
+});
+
 seatContainer.addEventListener("click", function(e) {
   e.target.classList.contains("occupied")
     ? none

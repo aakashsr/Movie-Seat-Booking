@@ -18,6 +18,11 @@ let ticketPrice = +movieSelect.value;
 //   });
 // });
 
+function setMovieData(movieIndex, moviePrice) {
+  localStorage.setItem("selectedMovieIndex", movieIndex);
+  localStorage.setItem("selectedMoviePrice", moviePrice);
+}
+
 function updateCountAndPrice() {
   const selectedSeats = document.querySelectorAll(".container .selected");
 
@@ -34,7 +39,7 @@ function updateCountAndPrice() {
 
 movieSelect.addEventListener("change", function(e) {
   ticketPrice = +movieSelect.value;
-  // setMovieData(e.target.selectedIndex, e.target.value);
+  setMovieData(e.target.selectedIndex, e.target.value);
   updateCountAndPrice();
 });
 

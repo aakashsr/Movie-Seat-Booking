@@ -14,6 +14,8 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #001232;
+    padding-top: 25px;
+
 }
 
 .movie-container {
@@ -61,6 +63,7 @@ body {
     width: 35px;
     background: #01163e;
     border: 2px solid #314c81;
+    transition: all .2s ease;
 }
 
 .seat.selected {
@@ -194,7 +197,7 @@ p.text span {
     }
 
     .movie-screen img {
-        max-width: 90%;
+        max-width: 92%;
     }
 
     .subtitle {

@@ -20,14 +20,21 @@ let ticketPrice = +movieSelect.value;
 
 function updateCountAndPrice() {
   const selectedSeats = document.querySelectorAll(".container .selected");
+
+  seatsIndex = [...selectedSeats].map(function(seat) {
+    return [...seats].indexOf(seat);
+  });
+
+  localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
+
   let selectedSeatsCount = selectedSeats.length;
   count.textContent = selectedSeatsCount;
-  let ticketPrice = +movieSelect.value;
   total.textContent = ticketPrice * selectedSeatsCount;
 }
 
 movieSelect.addEventListener("change", function(e) {
   ticketPrice = +movieSelect.value;
+  // setMovieData(e.target.selectedIndex, e.target.value);
   updateCountAndPrice();
 });
 

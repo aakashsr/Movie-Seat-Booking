@@ -26,6 +26,7 @@ body {
     border: 0;
     border-radius: 5px;
     font-size: 14px;
+    outline: none;
     margin-left: 10px;
     padding: 5px 15px 5px 15px;
     -webkit-appearance: none;

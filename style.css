@@ -191,6 +191,10 @@ p.text span {
 
 @media (max-width: 576px) {
 
+    body {
+        padding-top: 30px;
+    }
+
     .seat {
         height: 21px;
         width: 23px;
@@ -211,6 +215,11 @@ p.text span {
 
     .seat:nth-last-of-type(2) {
         margin-left: 12px;
+    }
+
+    .movie-screen {
+        margin-top: 25px;
+        margin-bottom: 20px;
     }
 
     .text {

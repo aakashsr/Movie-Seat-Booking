@@ -17,7 +17,7 @@ const movieSelect = document.getElementById("movie");
 //   });
 // });
 
-// localStorage.clear();
+localStorage.clear();
 
 populateUI();
 

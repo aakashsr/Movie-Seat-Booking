@@ -3,7 +3,6 @@ const seatContainer = document.querySelector(".container");
 const count = document.getElementById("count");
 const total = document.getElementById("total");
 const movieSelect = document.getElementById("movie");
-let ticketPrice = +movieSelect.value;
 
 // Another Approach
 
@@ -22,14 +21,15 @@ let ticketPrice = +movieSelect.value;
 
 populateUI();
 
-localStorage.clear();
+let ticketPrice = +movieSelect.value;
 
+// Save selected movie index and price
 function setMovieData(movieIndex, moviePrice) {
   localStorage.setItem("selectedMovieIndex", movieIndex);
   localStorage.setItem("selectedMoviePrice", moviePrice);
 }
 
-function updateCountAndPrice() {
+function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll(".container .selected");
 
   seatsIndex = [...selectedSeats].map(function(seat) {
@@ -67,7 +67,7 @@ function populateUI() {
 movieSelect.addEventListener("change", function(e) {
   ticketPrice = +movieSelect.value;
   setMovieData(e.target.selectedIndex, e.target.value);
-  updateCountAndPrice();
+  updateSelectedCount();
 });
 
 seatContainer.addEventListener("click", function(e) {
@@ -75,7 +75,7 @@ seatContainer.addEventListener("click", function(e) {
     ? null
     : e.target.classList.toggle("selected");
 
-  updateCountAndPrice();
+  updateSelectedCount();
 });
 
 // Another Approach
@@ -86,6 +86,9 @@ seatContainer.addEventListener("click", function(e) {
 //     !e.target.classList.contains("occupied")
 //   ) {
 //     e.target.classList.toggle("selected");
-//     updateCountAndPrice();
+//     updateSelectedCount();
 //   }
 // });
+
+// Initial count and total rendering
+updateSelectedCount();

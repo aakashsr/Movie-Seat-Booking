@@ -1,5 +1,5 @@
 const seats = document.querySelectorAll(".row .seat:not(.occupied)");
-const seatContainer = document.querySelector(".container");
+const seatContainer = document.querySelector(".row-container");
 const count = document.getElementById("count");
 const total = document.getElementById("total");
 const movieSelect = document.getElementById("movie");
@@ -70,25 +70,17 @@ movieSelect.addEventListener("change", function(e) {
   updateSelectedCount();
 });
 
+// Adding selected class to only non-occupied seats on 'click'
+
 seatContainer.addEventListener("click", function(e) {
-  e.target.classList.contains("occupied")
-    ? null
-    : e.target.classList.toggle("selected");
-
-  updateSelectedCount();
+  if (
+    e.target.classList.contains("seat") &&
+    !e.target.classList.contains("occupied")
+  ) {
+    e.target.classList.toggle("selected");
+    updateSelectedCount();
+  }
 });
-
-// Another Approach
-
-// seatContainer.addEventListener("click", function(e) {
-//   if (
-//     e.target.classList.contains("seat") &&
-//     !e.target.classList.contains("occupied")
-//   ) {
-//     e.target.classList.toggle("selected");
-//     updateSelectedCount();
-//   }
-// });
 
 // Initial count and total rendering
 updateSelectedCount();
